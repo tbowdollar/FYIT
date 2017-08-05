@@ -10,8 +10,6 @@ body {
 }
 .wrapper {
 	width: 100%;
-	background-color: #000;
-  height: 100vh;
 }
 .container {
 	width: 100%;
@@ -101,12 +99,17 @@ MAIN CSS
 ********************/
 
 /* Type */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 * {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 h1, h2, h3, h4, p, ul {
   padding: 0;
   margin: 0;
+}
+h1, h2, h3 {
+  color: #3d3f41;
 }
 a {
   color: inherit;
@@ -119,13 +122,16 @@ a {
   left: 0;
   width: 100%;
   height: 115px;
+  transition: linear .2s;
 }
 #header .logo {
   margin: 32px 0;
+  transition: linear .2s;
 }
 #header .navigation {
   float: right;
   margin: 36px 0;
+  transition: linear .2s;
 }
 #header .navigation li {
   list-style: none;
@@ -135,6 +141,28 @@ a {
   padding: 15px;
   font-size: 18px;
   line-height: 22px;
+}
+#header .navigation li a:hover {
+  border-bottom: 2px solid #317EFF;
+}
+#header .burger {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin: 34px 0;
+  cursor: pointer;
+  display: none;
+  transition: linear .2s;
+}
+#header .burger .br {
+  height: 3px;
+  width: 100%;
+  background-color: #3d3f41;
+  margin-bottom: 5px;
+  transition: linear .2s;
+}
+#header .burger .br:nth-of-type(2) {
+  transition: none !important;
 }
 #hero {
   background-image:url('hero.jpg');
@@ -154,12 +182,112 @@ a {
 #hero  p {
   color: #fff;
   margin-bottom: 60px;
+  font-size: 18px;
+  line-height: 22px;
 }
 #hero .btn {
-  border: 2px solid #fff;
-  padding: 15px 40px;
-  border-radius: 30px;
   color: #fff;
+}
+#hero .btn:hover {
+  background-color: #fff;
+  color: #3d3f41;
+}
+#alpha .content {
+  margin-top: 50px;
+}
+#alpha h3 {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+#alpha p {
+    color: #858686;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 60px;
+}
+#alpha img {
+  margin-bottom: 20px;
+}
+#beta {
+  background-color: #f5f6f5;
+  text-align: center;
+}
+#beta h2 {
+  font-size: 40px;
+  line-height: 44px;
+  margin: 80px 0 30px 0;
+}
+#beta p {
+  color: #3d3f41;
+  margin-bottom: 80px;
   font-size: 20px;
   line-height: 24px;
+}
+#delta {
+  background-color: #317EFF;
+  text-align: center;
+}
+#delta h3 {
+  margin: 80px 0 30px 0;
+  font-size: 40px;
+  line-height: 44px;
+  color: #fff;
+}
+/* Global */
+.btn {
+  border: 2px solid #fff;
+  padding: 17px 40px 15px 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  line-height: 24px;
+  transition: linear .2s;
+}
+#header.scroll {
+  border-bottom: 1px solid #f5f6f5;
+  height: 75px !important;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+h1.scroll {
+  margin: 13px 0 !important;
+  border: none !important;
+}
+ul.scroll {
+  border: none !important;
+  margin: 17px 0 !important;
+}
+ul.scroll li a {
+  padding-bottom: 7px !important;
+}
+.burger.scroll {
+  margin: 15px 0 !important;
+}
+.active {
+  border-bottom: 2px solid #317EFF;
+}
+.br.openL {
+transform:  rotate(50deg) scale(1) skew(3deg) translate(5px);
+}
+.br.openR {
+transform:  rotate(-50deg) scale(1) skew(3deg) translate(5px);
+}
+.hide {
+  display: none !important;
+}
+/***************
+Responsive
+***************/
+@media all and (max-width: 1200px){
+  #header .col-3 {
+    width: 50%;
+  }
+  #header .navigation {
+    display: none !important;
+  }
+  .burger {
+    display: block !important;
+  }
+  img {
+    width: 100%;
+  }
 }
